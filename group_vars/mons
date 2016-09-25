@@ -1,0 +1,9 @@
+---
+
+# CephFS
+cephfs_data: cephfs_data
+cephfs_metadata: cephfs_metadata
+cephfs: cephfs
+
+# Enable the Calamari-backed REST API on a Monitor
+#calamari: true

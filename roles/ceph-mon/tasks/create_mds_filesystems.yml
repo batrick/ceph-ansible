@@ -14,6 +14,7 @@
 - name: create ceph filesystem
   command: ceph --cluster {{ cluster }} fs new {{ cephfs }} {{ cephfs_metadata }} {{ cephfs_data }}
   changed_when: false
+  ignore_errors: true
   when: ceph_release_num.{{ ceph_release }} > ceph_release_num.firefly
 
 - name: allow multimds

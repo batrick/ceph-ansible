@@ -11,8 +11,8 @@ RUN dpkg -i vagrant_1.8.5_x86_64.deb
 RUN rm -f vagrant_1.8.5_x86_64.deb
 RUN vagrant plugin install vagrant-linode
 # Download patch from https://github.com/displague/vagrant-linode/pull/66
-RUN wget -O .vagrant.d/gems/gems/vagrant-linode-0.2.7/lib/vagrant-linode/actions/create.rb https://raw.githubusercontent.com/batrick/vagrant-linode/dfa305dab9c5a8ba49b50e7d9d1159977708c2d1/lib/vagrant-linode/actions/create.rb
+RUN wget -O .vagrant.d/gems/gems/vagrant-linode-0.2.7/lib/vagrant-linode/actions/create.rb https://raw.githubusercontent.com/batrick/vagrant-linode/3ac3e6768b5c1f6bf0d67d114003270d821b300c/lib/vagrant-linode/actions/create.rb
 RUN mkdir .ssh && ssh-keygen -f .ssh/id_rsa -t rsa -N ''
-RUN git clone https://github.com/ceph/ceph-ansible.git
-
+RUN git clone https://github.com/batrick/ceph-ansible.git
 WORKDIR /root/ceph-ansible
+RUN git checkout multimds-tests

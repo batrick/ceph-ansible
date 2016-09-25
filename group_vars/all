@@ -1,0 +1,23 @@
+---
+
+ceph_dev: true
+ceph_dev_branch: wip-multimds-tests
+
+pool_default_pg_num: 512
+
+ceph_conf_overrides:
+  client:
+    fuse default permissions: false
+    log file: /var/log/ceph/ceph-client-$pid.log
+    admin socket: /var/run/ceph/ceph-client-$pid.asok
+  mds:
+    debug mds: 0/5
+    mds bal interval: 0
+    mds cache size: 200000
+  mgr:
+    modules:
+    - rest
+    - fsstatus
+
+mds_allow_multimds: true
+mds_max_mds: 1

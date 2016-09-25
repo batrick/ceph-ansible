@@ -1,0 +1,6 @@
+---
+
+ceph_conf_overrides:
+  client:
+    debug ms: 0/5
+    debug client: 0/5
