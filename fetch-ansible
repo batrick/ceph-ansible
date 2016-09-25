@@ -1,0 +1,14 @@
+#!/bin/bash
+
+launcher=173.255.231.169
+
+function scpk {
+    scp -o PreferredAuthentications=publickey "$@"
+}
+
+function fetch {
+    scpk "root@${launcher}":"$1" "$2"
+}
+
+fetch /root/.ssh/id_rsa .
+fetch /root/ceph-ansible/.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory .
