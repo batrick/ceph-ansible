@@ -1,5 +1,5 @@
 /var/log/ceph/*.log {
-    rotate 15
+    rotate 50
     compress
     sharedscripts
     postrotate

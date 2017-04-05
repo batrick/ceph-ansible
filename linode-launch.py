@@ -36,32 +36,32 @@ with open(SSH_PUBLIC_KEY_FILE) as f:
     SSH_KEY = f.read()
 CLUSTER = [
   {
-    "count": 0,
+    "count": 3,
     "prefix": "mon",
     "plan": 1024,
     "group": "mons",
   },
   {
-    "count": 0,
+    "count": 64,
     "prefix": "osd",
     "plan": 1024,
     "root_size": 4096,
     "group": "osds",
   },
   {
-    "count": 0,
+    "count": 16,
     "prefix": "mds",
-    "plan": 4096,
+    "plan": 8192,
     "group": "mdss",
   },
   {
-    "count": 0,
+    "count": 64,
     "prefix": "client",
-    "plan": 2048,
+    "plan": 1024,
     "group": "clients",
   },
   {
-    "count": 0,
+    "count": 1,
     "prefix": "mgr",
     "plan": 1024,
     "group": "mgrs",

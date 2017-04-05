@@ -70,9 +70,8 @@ function main {
     ans --module-name=shell --args="chmod 000 /mnt; crontab crontab" all
     ans --module-name=command --args="systemctl start ceph-fuse@-mnt.service" clients
     ans --module-name=command --args="systemctl start ceph-gather.service" "$WATCH"
-    (sleep 30; while ! python2 balancer.py; do sleep 30; done) >> BALANCER 2>&1 &
     date --utc
-    time ans --forks=1000 --module-name=command --args="chdir=/mnt/ /kernel_untar_build.sh" clients
+    time ans --forks=1000 --module-name=shell --args="chdir=/mnt/ mkdir -p dir && /creats.sh dir/file. 15625" clients
     date --utc
     wait
     ans --module-name=command --args="systemctl stop ceph-gather.service" "$WATCH"

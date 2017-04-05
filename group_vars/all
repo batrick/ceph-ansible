@@ -3,7 +3,7 @@
 ceph_dev: true
 ceph_dev_branch: wip-multimds-tests
 
-pool_default_pg_num: 512
+pool_default_pg_num: 4096
 
 ceph_conf_overrides:
   client:
@@ -11,9 +11,10 @@ ceph_conf_overrides:
     log file: /var/log/ceph/ceph-client-$pid.log
     admin socket: /var/run/ceph/ceph-client-$pid.asok
   mds:
-    debug mds: 0/5
-    mds bal interval: 0
-    mds cache size: 200000
+    debug mds: 7/10
+    debug mds balancer: 10/10
+    debug mds migrator: 10/10
+    mds cache size: 1000000
   mgr:
     modules:
     - rest
